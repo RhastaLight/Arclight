@@ -1,284 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DeVTools - Revolutionary development and security testing suite by Rhasta. Features include Load Testing, Traffic Analytics, Hash Generation, SEO Tools, and more.">
-    <meta name="author" content="Rhasta">
-    <meta name="keywords" content="DeVTools, development tools, load testing, traffic analytics, hash generator, SEO tools, Rhasta, security testing, web development">
-    <meta property="og:title" content="DeVTools - Revolutionary Development Suite">
-    <meta property="og:description" content="Next-generation development and security testing suite featuring load testing, traffic analytics, hash generation, and SEO tools. Created by Rhasta">
-    <meta property="og:image" content="/api/placeholder/1200/630">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DeVTools - Revolutionary Development Suite">
-    <meta name="twitter:description" content="Next-generation development and security testing suite by Wanz Xploit">
-    <meta name="twitter:image" content="/api/placeholder/1200/600">
-    <link rel="icon" type="image/png" href="/api/placeholder/32/32">
-    <title>DeVTools - Revolutionary Development Suite by Wanz Xploit</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Bot WhatsApp Rhasta Sensei</title>
     <style>
-        :root {
-            --primary-gradient: linear-gradient(140deg, #1a1a2e, #16213e, #1a1a2e);
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --neon-shadow: 0 0 15px rgba(66, 153, 225, 0.5);
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0a0a0a;
+            color: #0ff;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
         }
-        html { scroll-behavior: smooth; }
-        body { font-family: system-ui, -apple-system, sans-serif; overflow-x: hidden; }
-        .gradient-bg { background: var(--primary-gradient); }
-        .glass-effect {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #0ff;
+            box-shadow: 0 0 20px #0ff;
+            background: rgba(0, 0, 0, 0.8);
+            animation: glow 1.5s infinite alternate;
         }
-        .neon-border { box-shadow: var(--neon-shadow); }
-        .feature-card {
-            background: rgba(26, 26, 46, 0.8);
-            backdrop-filter: blur(10px);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px #0ff; }
+            100% { box-shadow: 0 0 20px #0ff; }
         }
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(66, 153, 225, 0.2);
+
+        img {
+            width: 150px;
+            border-radius: 50%;
+            border: 3px solid #0ff;
+            box-shadow: 0 0 15px #0ff;
         }
-        .tool-card { transition: all 0.3s ease; }
-        .tool-card:hover {
-            transform: scale(1.02);
-            z-index: 10;
+
+        h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #0ff;
         }
-        .cube-animation { animation: cube-rotate 8s infinite linear; }
-        .floating { animation: floating 3s infinite ease-in-out; }
-        .pulse { animation: pulse 2s infinite; }
-        @keyframes cube-rotate {
-            0% { transform: rotateY(0deg) rotateX(0deg); }
-            100% { transform: rotateY(360deg) rotateX(360deg); }
+
+        p {
+            font-size: 16px;
+            color: #aaa;
         }
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #000;
+            background: #0ff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px #0ff;
+            transition: 0.3s ease-in-out;
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+        .btn:hover {
+            background: #00d9ff;
+            box-shadow: 0 0 25px #00d9ff;
         }
-        .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
+
+        /* Efek Glitch */
+        .glitch {
+            position: relative;
+            display: inline-block;
         }
-        .mobile-menu.active { transform: translateX(0); }
-        .gradient-text {
-            background: linear-gradient(45deg, #60A5FA, #3B82F6, #2563EB);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.8;
         }
-        @media (max-width: 640px) {
-            .container { padding-left: 1rem; padding-right: 1rem; }
-            h1 { font-size: 2.5rem; line-height: 1.2; }
-            .feature-card, .tool-card { margin-bottom: 1rem; }
+
+        .glitch::before {
+            color: #f00;
+            animation: glitch-effect 0.5s infinite alternate;
         }
-        @media (min-width: 641px) and (max-width: 1024px) {
-            h1 { font-size: 3.5rem; }
+
+        .glitch::after {
+            color: #00f;
+            animation: glitch-effect 0.5s infinite alternate-reverse;
         }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1a1a2e; }
-        ::-webkit-scrollbar-thumb {
-            background: #3B82F6;
-            border-radius: 4px;
+
+        @keyframes glitch-effect {
+            0% { transform: translate(2px, -2px); }
+            100% { transform: translate(-2px, 2px); }
         }
-        ::-webkit-scrollbar-thumb:hover { background: #2563EB; }
+
     </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 h-full w-72 bg-gray-900 z-50 glass-effect p-6">
-        <div class="flex justify-end">
-            <button onclick="toggleMenu()" class="text-2xl focus:outline-none">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="flex flex-col space-y-6 mt-8">
-            <a href="#features" class="text-lg hover:text-blue-400 transition-colors">Features</a>
-            <a href="#tools" class="text-lg hover:text-blue-400 transition-colors">Tools</a>
-            <a href="#about" class="text-lg hover:text-blue-400 transition-colors">About</a>
-            <a href="#coming-soon" class="text-lg hover:text-blue-400 transition-colors">Coming Soon</a>
-        </div>
+<body>
+
+    <div class="container">
+        <img src="https://via.placeholder.com/150" alt="Bot Logo"> <!-- Ganti URL gambar -->
+        <h1 class="glitch" data-text="BOT WHATSAPP">BOT WHATSAPP</h1>
+        <p>Bot ini menyediakan fitur ekonomi, gacha, dan berbagai item menarik untuk dikoleksi!</p>
+        <a href="https://wa.me/62XXXXXXXXXX" class="btn">Hubungi di WhatsApp</a> <!-- Ganti nomor bot -->
     </div>
 
-    <header class="fixed w-full z-40 glass-effect">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <i class="fas fa-cube text-3xl text-blue-500 cube-animation"></i>
-                    <span class="text-2xl font-bold gradient-text">DeVTools</span>
-                </div>
-                <div class="hidden lg:flex space-x-8">
-                    <a href="#features" class="hover:text-blue-400 transition-colors">Features</a>
-                    <a href="#tools" class="hover:text-blue-400 transition-colors">Tools</a>
-                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-                    <a href="#coming-soon" class="hover:text-blue-400 transition-colors">Coming Soon</a>
-                </div>
-                <button class="lg:hidden text-2xl focus:outline-none" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <section class="gradient-bg min-h-screen flex items-center pt-16 relative overflow-hidden">
-        <div class="container mx-auto px-4 py-20 relative">
-            <div class="flex flex-col lg:flex-row items-center relative z-10">
-                <div class="lg:w-1/2 text-center lg:text-left relative z-10">
-                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-                        Unleash The Power of <span class="gradient-text">Ultimate Development</span>
-                    </h1>
-                    <p class="text-lg sm:text-xl lg:text-2xl mb-8 text-gray-300">
-                        DeVTools is your comprehensive suite for modern development and security testing. Featuring advanced load testing, traffic analytics, hash generation, and SEO optimization tools - all in one powerful package.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
-                        <button class="glass-effect hover:neon-border px-8 py-4 rounded-xl font-bold text-lg transition-all pulse" disabled>
-                            <i class="fas fa-download mr-2"></i> Coming Soon
-                        </button>
-                        <a href="#features" class="glass-effect hover:bg-blue-600 px-8 py-4 rounded-xl font-bold text-lg transition-all">
-                            Discover More
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 mt-12 lg:mt-0 hidden lg:block">
-                    <div class="relative">
-                        <i class="fas fa-cube absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[12rem] text-blue-500 cube-animation"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="py-20 relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16 gradient-text">Professional Tools Suite</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="feature-card p-8 rounded-2xl">
-                    <div class="text-5xl text-blue-400 mb-6">
-                        <i class="fas fa-tachometer-alt floating"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Professional Load Testing</h3>
-                    <p class="text-gray-300">Enterprise-grade load testing with real-time analytics, detailed metrics, and comprehensive reporting for maximum performance insights.</p>
-                </div>
-                <div class="feature-card p-8 rounded-2xl">
-                    <div class="text-5xl text-blue-400 mb-6">
-                        <i class="fas fa-chart-line floating"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Traffic Enhancement</h3>
-                    <p class="text-gray-300">Advanced traffic analytics and enhancement tools with AI-powered algorithms for optimal website performance and visibility.</p>
-                </div>
-                <div class="feature-card p-8 rounded-2xl">
-                    <div class="text-5xl text-blue-400 mb-6">
-                        <i class="fas fa-shield-alt floating"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Security Testing Suite</h3>
-                    <p class="text-gray-300">Comprehensive security testing tools including advanced hash generators, penetration testing utilities, and security analysis features.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tools" class="py-20 relative">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16 gradient-text">Advanced Features</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="tool-card glass-effect p-6 rounded-xl">
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-bolt text-2xl text-blue-400"></i>
-                        <h3 class="text-xl font-bold">Load Testing Pro</h3>
-                    </div>
-                    <p class="mt-4 text-gray-300">Enterprise-level load testing with detailed analytics and reporting</p>
-                </div>
-                <div class="tool-card glass-effect p-6 rounded-xl">
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-eye text-2xl text-blue-400"></i>
-                        <h3 class="text-xl font-bold">Traffic Master</h3>
-                    </div>
-                    <p class="mt-4 text-gray-300">Advanced traffic enhancement and analytics system</p>
-                </div>
-                <div class="tool-card glass-effect p-6 rounded-xl">
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-key text-2xl text-blue-400"></i>
-                        <h3 class="text-xl font-bold">Hash Generator</h3>
-                    </div>
-                    <p class="mt-4 text-gray-300">Professional hash generation and security testing tools</p>
-                </div>
-                <div class="tool-card glass-effect p-6 rounded-xl">
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-search text-2xl text-blue-400"></i>
-                        <h3 class="text-xl font-bold">SEO Master</h3>
-                    </div>
-                    <p class="mt-4 text-gray-300">Complete SEO optimization and analysis toolkit</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 relative overflow-hidden">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl lg:text-5xl font-bold mb-12 gradient-text">About The Developer</h2>
-            <div class="glass-effect p-8 rounded-2xl max-w-3xl mx-auto">
-                <div class="mb-6">
-                    <i class="fas fa-code text-5xl text-blue-500 mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">RHASTA</h3>
-                    <p class="text-blue-400">Lead Developer & Security Expert</p>
-                </div>
-                <p class="text-gray-300 text-lg">
-                    A passionate developer and security expert dedicated to creating professional-grade development and security testing tools. DeVTools represents the culmination of extensive experience in web development, security testing, and performance optimization.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="coming-soon" class="py-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900 opacity-10"></div>
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl lg:text-5xl font-bold mb-8 gradient-text">Join The Revolution</h2>
-            <p class="text-xl lg:text-2xl mb-12 text-gray-300">Be among the first to experience the next generation of development tools. Sign up for exclusive early access and special offers!</p>
-            <form class="max-w-xl mx-auto">
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-xl bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500 text-lg">
-                    <button type="submit" class="glass-effect hover:neon-border px-8 py-4 rounded-xl font-bold text-lg transition-all">
-                        Notify Me
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <footer class="py-8 glass-effect">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex items-center justify-center space-x-3 mb-4">
-                <i class="fas fa-cube text-2xl text-blue-500"></i>
-                <span class="text-xl font-bold gradient-text">DeVTools</span>
-            </div>
-            <p class="text-gray-400">Created by Rhasta &copy; 2025. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    const menu = document.getElementById('mobileMenu');
-                    menu.classList.remove('active');
-                }
-            });
-        });
-    </script>
 </body>
-</html>>
+</html>
