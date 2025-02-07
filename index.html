@@ -3,112 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bot WhatsApp Rhasta Sensei</title>
+    <meta name="description" content="Bot WhatsApp canggih dengan fitur ekonomi, gacha, dan teks RPG.">
+    <meta name="author" content="Rhasta">
+    <meta name="keywords" content="bot WhatsApp, WhatsApp bot, ekonomi bot, gacha bot, teks RPG">
+    <meta property="og:title" content="Bot WhatsApp RPG - By Rhasta">
+    <meta property="og:description" content="Bot WhatsApp ekonomi, gacha, dan teks RPG dengan sistem unik.">
+    <meta property="og:image" content="https://your-image-url.com/banner.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="https://your-image-url.com/favicon.png">
+    <title>Bot WhatsApp RPG - By Rhasta</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
+        :root {
+            --primary-gradient: linear-gradient(140deg, #1a1a2e, #16213e, #1a1a2e);
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --neon-shadow: 0 0 15px rgba(66, 153, 225, 0.5);
+        }
         body {
-            font-family: 'Orbitron', sans-serif;
-            background-color: #0a0a0a;
-            color: #0ff;
-            text-align: center;
-            padding: 20px;
-            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-gradient);
+            color: white;
         }
-
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px solid #0ff;
-            box-shadow: 0 0 20px #0ff;
-            background: rgba(0, 0, 0, 0.8);
-            animation: glow 1.5s infinite alternate;
+        .glass-effect {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--neon-shadow);
+            padding: 1.5rem;
+            border-radius: 12px;
         }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 10px #0ff; }
-            100% { box-shadow: 0 0 20px #0ff; }
+        .neon-border:hover {
+            box-shadow: 0 0 20px rgba(66, 153, 225, 0.8);
         }
-
-        img {
-            width: 150px;
-            border-radius: 50%;
-            border: 3px solid #0ff;
-            box-shadow: 0 0 15px #0ff;
+        .gradient-text {
+            background: linear-gradient(45deg, #60A5FA, #3B82F6, #2563EB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        h1 {
-            font-size: 24px;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px #0ff;
+        .pulse {
+            animation: pulse 2s infinite;
         }
-
-        p {
-            font-size: 16px;
-            color: #aaa;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
-
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: #000;
-            background: #0ff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            box-shadow: 0 0 15px #0ff;
-            transition: 0.3s ease-in-out;
-        }
-
-        .btn:hover {
-            background: #00d9ff;
-            box-shadow: 0 0 25px #00d9ff;
-        }
-
-        /* Efek Glitch */
-        .glitch {
-            position: relative;
-            display: inline-block;
-        }
-
-        .glitch::before, .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0.8;
-        }
-
-        .glitch::before {
-            color: #f00;
-            animation: glitch-effect 0.5s infinite alternate;
-        }
-
-        .glitch::after {
-            color: #00f;
-            animation: glitch-effect 0.5s infinite alternate-reverse;
-        }
-
-        @keyframes glitch-effect {
-            0% { transform: translate(2px, -2px); }
-            100% { transform: translate(-2px, 2px); }
-        }
-
     </style>
 </head>
 <body>
+    <header class="py-6 text-center">
+        <h1 class="text-4xl font-bold gradient-text">Bot WhatsApp RPG</h1>
+        <p class="text-gray-300 mt-2">Bot ekonomi, gacha, dan teks RPG dengan sistem unik.</p>
+    </header>
 
-    <div class="container">
-        <img src="https://via.placeholder.com/150" alt="Bot Logo"> <!-- Ganti URL gambar -->
-        <h1 class="glitch" data-text="BOT WHATSAPP">BOT WHATSAPP</h1>
-        <p>Bot ini menyediakan fitur ekonomi, gacha, dan berbagai item menarik untuk dikoleksi!</p>
-        <a href="https://wa.me/62XXXXXXXXXX" class="btn">Hubungi di WhatsApp</a> <!-- Ganti nomor bot -->
-    </div>
+    <section class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass-effect">
+                <h3 class="text-xl font-bold mb-2">📜 Fitur Utama</h3>
+                <ul class="text-gray-300 list-disc ml-5">
+                    <li>⚡ Sistem ekonomi lengkap</li>
+                    <li>🎲 Gacha karakter & item</li>
+                    <li>💬 Chatbot interaktif</li>
+                    <li>📊 Statistik & leaderboard</li>
+                </ul>
+            </div>
+            <div class="glass-effect">
+                <h3 class="text-xl font-bold mb-2">📌 Cara Menggunakan</h3>
+                <p class="text-gray-300">Tambahkan bot ke kontak, lalu ketik <code>!menu</code> untuk melihat daftar perintah.</p>
+            </div>
+            <div class="glass-effect">
+                <h3 class="text-xl font-bold mb-2">⚡ Status Bot</h3>
+                <p class="text-gray-300">Online ✅ | 5.000+ pengguna aktif</p>
+            </div>
+        </div>
 
+        <div class="text-center mt-10">
+            <a href="https://wa.me/1234567890" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg neon-border">
+                ✨ Gunakan Bot Sekarang
+            </a>
+        </div>
+    </section>
+
+    <footer class="mt-12 text-center text-gray-400 py-6">
+        <p>&copy; 2025 - Dibuat oleh Rhasta</p>
+    </footer>
 </body>
 </html>
